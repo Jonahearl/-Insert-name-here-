@@ -12,3 +12,5 @@ As you read through this you will see I am making attempts to produce a PET bott
 * If time permits i will work on the physical aspects of a filament welder as I am hoping to just chuck the feature in the code or something?
 <br>
 I feel like that isn't entirely the way that bullet points should work but hey, oh well.
+<br>
+Also fun fact cardboard is a really good insulator up until about like 200 degrees C and then it does go fwoosh but still.
