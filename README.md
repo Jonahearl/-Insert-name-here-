@@ -14,3 +14,8 @@ As you read through this you will see I am making attempts to produce a PET bott
 I feel like that isn't entirely the way that bullet points should work but hey, oh well.
 <br>
 Also fun fact cardboard is a really good insulator up until about like 200 degrees C and then it does go fwoosh but still.
+<br>
+
+# The BOM
+The BOM can be found through this link  
+https://docs.google.com/spreadsheets/d/1styOGFM2UJt06ZpMyHF2YULmxQEpHG1qhkH0TwZIWGY/edit?usp=sharing
