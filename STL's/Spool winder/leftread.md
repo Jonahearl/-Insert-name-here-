@@ -1,0 +1,3 @@
+# The left side
+This directory holds both the files for the spool holder and spinner which subsequently includes the mount for the stepper motor too. Note that the spool holder is two pieces and I recommend it be printed twice otherwise it shall not work, holy I forgot english...
+<img width="1149" height="695" alt="image" src="https://github.com/user-attachments/assets/a5224483-d5d1-4797-87d8-49f4f643496d" />
