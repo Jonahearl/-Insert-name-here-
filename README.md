@@ -28,3 +28,8 @@ https://docs.google.com/spreadsheets/d/1styOGFM2UJt06ZpMyHF2YULmxQEpHG1qhkH0TwZI
 <br>
 <br>
 <img width="1091" height="750" alt="image" src="https://github.com/user-attachments/assets/c2c8a5b4-10f8-47df-bca0-38174991fc48" />
+
+# Circuit design
+This is the initial circuit design I roughly laid out on paper prior to switching over to kicad.
+![WIN_20260227_17_56_14_Pro](https://github.com/user-attachments/assets/30e05320-cf86-4238-8081-8c69ae80162b)
+
