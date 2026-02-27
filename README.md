@@ -1,6 +1,11 @@
 # -Insert-name-here-
-As you read through this you will see I am making attempts to produce a PET bottle recycler to turn them into PET filament with a diameter of 1.75mm for FDM 3d printing.
+As you read through this you will see I am making attempts to produce a PET bottle recycler to turn them into PET filament with a diameter of 1.75mm for FDM 3d printing. 
 <br>
+# Setting it up and using it
+To set it up I aim to simply have it be compcted together in a safe fashion. That is once you have all the parts 3d printed and not, just being able to screw it all up upload the firmware and set off on your recycling journey. Usage of the item should be as easy as placing a bottle onto the set location after adequately expanding it and then pulling it through to be cut. I hope to release a video guide.
+<br>
+# Journey
+I plan on making this project becasue it has always been a goal of mine to recycle these common plastic bottles into other shapes and 3d printing is the best way to do this. I have been stockpiling bottles for a while too and my parents are starting to get a bit more bothered about it because they take up half of my bedroom.
 # Planned Process of events
 * Initially I want to refine the cutting of the bottles to be accurate. This accuracy is important so that the filament can more accurately be sized for when it comes out of the modified hotend.
 * Then I would like to design the actual extruder with a hotend drilled out to 1.5mm nozzle which will likely be heated with a 12V ceramic heater catridge.
@@ -17,7 +22,7 @@ Also fun fact cardboard is a really good insulator up until about like 200 degre
 <br>
 
 # The BOM
-The BOM can be found through this link  
+If you are looking for the bill of materials it can be found though this link:  
 https://docs.google.com/spreadsheets/d/1styOGFM2UJt06ZpMyHF2YULmxQEpHG1qhkH0TwZIWGY/edit?usp=sharing
 
 <br>
