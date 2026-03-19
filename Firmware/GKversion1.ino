@@ -1,93 +1,64 @@
 //This is the first iteration of firmware for Galvanised Kaas PID sourced from https://randomdamon.blogspot.com/2015/12/diy-hot-end-arduino-pid-control.html
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27,16,2);
 
-#include <PID_v1.h>
-// Analog output pin
-#define outputPin 9
-// thermistor analog pin
-#define TSPIN A0
-// how many samples to take and average
-#define SAMCOUNT 5
-// how long between pid/sampling
-#define SAMPLETIME 1000
-//Define Variables we'll be connecting to
-double Setpoint, currentTemp, Output;
-//Specify the links and initial tuning parameters
-PID myPID(&currentTemp, &Output, &Setpoint,15,.3,0, DIRECT);
+const float Temp = 3950; // should match the Beta Coefficient of the thermistor
 
-const int stepPin = 3; 
-const int dirPin = 4; 
+// digital 4 a switch (first temp with full PID line one)
+// digital 3 a switch (the spinning begins line two)
+// mosfet is on pin 9 for pwm
+// steppa is on 5 for step and 6 for dir
+// digital 7 for heat led
+
+
 void setup() {
-  Serial.begin(9600);
-  analogReference(EXTERNAL);
-  pinMode(outputPin, OUTPUT);
-  //initialize PID setpoint *C
-  Setpoint = 235;
-  //turn the PID on
-  myPID.SetMode(AUTOMATIC);
-  myPID.SetSampleTime(SAMPLETIME);
-  //pid Autotuner
-  pinMode(stepPin,OUTPUT); 
-  pinMode(dirPin,OUTPUT);
+  // put your setup code here, to run once:
+lcd.init();
+lcd.setBacklight();
+Serial.begin(9600);
+pinMode(5,OUTPUT); // Step
+pinMode(6,OUTPUT); //Dir
+pinMode(4,INPUT_PULLUP); // temp
+pinMode(3,INPUT_PULLUP); // spin
 }
+
 void loop() {
-if (digitalRead(8) == 1) {
-  digitalWrite(dirPin,HIGH); // Enables the motor to move in a particular direction
-  // Makes 200 pulses for making one full cycle rotation
-  for(int x = 0; x < 200; x++) {
-    digitalWrite(stepPin,HIGH); 
-    delayMicroseconds(500); 
-    digitalWrite(stepPin,LOW); 
-    delayMicroseconds(500); 
-    delay(1000);
+  // put your main code here, to run repeatedly:
+
+int analogValue = analogRead(A0);
+float celsius = 1 / (log(1 / (1023. / analogValue - 1)) / Temp + 1.0 / 298.15) - 273.15;
+Serial.print("Temperature: ");
+Serial.print(celsius);
+Serial.println(" ℃");
+delay(1000);
+
+digitalWrite(6,HIGH); // Set Dir high
+
+if (digitalRead(4) == 1){
+  lcd.setCursor(0, 0);
+  lcd.print(celcius);
+  Serial.println("trying temp");
+  //analogWrite(5, 128);
+  if (celcius) =< 195 {
+  analogWrite(9, 128);
+  delay(2300);
+  else if (celcius) => 200 {
+    analogWrite(9, 0);
+    delay(2100);
+
+  }
+
+
+  }
   
 }
-    if (Serial.available() > 0) {
-      // get incoming byte:
-      Setpoint = Serial.parseFloat();
-    }
-    uint8_t i;
-    double average = 0;
-    // take N samples in a row, with a slight delay
-    for (i = 0; i < SAMCOUNT; i++) {
-      average += analogRead(TSPIN);
-      delay(10);
-    }
-    average /= SAMCOUNT;
-    currentTemp=resistanceToC(inputToResistance(average));
-    myPID.Compute();
-    analogWrite(outputPin, Output);
+if (digitalRead(3) == 1) {
+   digitalWrite(5,HIGH); // Output high
+    delay(10); // Wait
+    digitalWrite(5,LOW); // Output low
+    delay(100); // Wait
 
-    Serial.print("Set Point: ");
-    Serial.print(Setpoint);
-    Serial.println(" *C)");
-    Serial.print("Temperature: ");
-    Serial.print(currentTemp);
-    Serial.println(" *C)");
-    Serial.print("PID output ");
-    Serial.println(Output);
-    delay(SAMPLETIME);
-  }
-  double inputToResistance(double input) {
-    // funtion to convert the input value to resistance
-    // the value of the 'other' resistor
-    double SERIESRESISTOR = 10000;
-    input = 1023 / input - 1;
-    return SERIESRESISTOR / input;
-  }
-  double resistanceToC(double resistance) {
-    // funtion to convert resistance to c
-    // temp/resistance for nominal
-    double THERMISTORNOMINAL = 118000;
-    double TEMPERATURENOMINAL = 25;
-    // beta coefficent
-    double BCOEFFICIENT = 3950;
-    double steinhart;
-    steinhart = resistance / THERMISTORNOMINAL;     // (R/Ro)
-    steinhart = log(steinhart);                  // ln(R/Ro)
-    steinhart /= BCOEFFICIENT;                   // 1/B * ln(R/Ro)
-    steinhart += 1.0 / (TEMPERATURENOMINAL + 273.15); // + (1/To)
-    steinhart = 1.0 / steinhart;                 // Invert
-    steinhart -= 273.15;   // convert to C
-    return steinhart;
-  }
+}
+
+
 }
