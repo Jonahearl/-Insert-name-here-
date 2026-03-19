@@ -10,6 +10,8 @@ I plan on making this project becasue it has always been a goal of mine to recyc
 # The BOM
 If you are looking for the bill of materials it can be found though this link:  
 https://docs.google.com/spreadsheets/d/1styOGFM2UJt06ZpMyHF2YULmxQEpHG1qhkH0TwZIWGY/edit?usp=sharing
+<img width="1000" height="247" alt="image" src="https://github.com/user-attachments/assets/5e2e4f7a-25ba-4c71-8fd5-0ce40037f9ae" />
+This is the current BOM I am uncertain of wether or not anything else will be needed but shouldn't exceed anymore than $10-20 so i'm hoping thats fine for now.
 
 <br>
 <br>
@@ -31,6 +33,8 @@ Here is an image of the V1 PCB for my project it has display, arduino nano, step
 
 # Schematic design
 This here picture is of my schematic from Kicad I used a lot of global labels to make it much easier to place the connections on one another.
+
+
 <img width="999" height="600" alt="image" src="https://github.com/user-attachments/assets/c8825722-14e8-45c0-b971-86c862aad910" />
 
 
