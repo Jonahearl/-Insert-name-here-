@@ -6,20 +6,6 @@ To set it up I aim to simply have it be compcted together in a safe fashion. Tha
 <br>
 # Journey
 I plan on making this project becasue it has always been a goal of mine to recycle these common plastic bottles into other shapes and 3d printing is the best way to do this. I have been stockpiling bottles for a while too and my parents are starting to get a bit more bothered about it because they take up half of my bedroom.
-# Planned Process of events
-* Initially I want to refine the cutting of the bottles to be accurate. This accuracy is important so that the filament can more accurately be sized for when it comes out of the modified hotend.
-* Then I would like to design the actual extruder with a hotend drilled out to 1.5mm nozzle which will likely be heated with a 12V ceramic heater catridge.
-* Following the extruder the next part on the list will be the spool holder and winder which will be spun using a nema 17 stepper motor most likely.
-* I guess at this point it will be time to then write some fancy code which I totally know how to do on a arduino nano for command functions and temperature control.
-* Either here or one step earlier I will design a frame probably using aluminium extrusions or wood to host all of the features.
-* Then it'll be time to create a PCB to mount it all to which I will most likely power off of a old ATX power supply which are in quite high supply to me.
-* Some very serious and not at all unrequired testing will take place at this point?
-* If time permits i will work on the physical aspects of a filament welder as I am hoping to just chuck the feature in the code or something?
-<br>
-I feel like that isn't entirely the way that bullet points should work but hey, oh well.
-<br>
-Also fun fact cardboard is a really good insulator up until about like 200 degrees C and then it does go fwoosh but still.
-<br>
 
 # The BOM
 If you are looking for the bill of materials it can be found though this link:  
@@ -32,4 +18,20 @@ https://docs.google.com/spreadsheets/d/1styOGFM2UJt06ZpMyHF2YULmxQEpHG1qhkH0TwZI
 # Circuit design
 This is the initial circuit design I roughly laid out on paper prior to switching over to kicad.
 ![WIN_20260227_17_56_14_Pro](https://github.com/user-attachments/assets/30e05320-cf86-4238-8081-8c69ae80162b)
+
+# Kicad images
+ 
+<br>
+
+# PCB design
+
+Here is an image of the V1 PCB for my project it has display, arduino nano, stepper, switch, thermistor, and catridge spots/connecters (idk). I used 3 screw terminals which will allow me to connect the two different voltages and then output that voltage towards the heater catridge to start heating for the plastic to melt.
+<br>
+<img width="500" height="504" alt="image" src="https://github.com/user-attachments/assets/a7925ca3-a944-4141-a2dc-1a2304009c93" /><img width="490" height="504" alt="image" src="https://github.com/user-attachments/assets/8a9cf371-adfa-465f-98d3-5bf0c75a720b" />
+
+# Schematic design
+This here picture is of my schematic from Kicad I used a lot of global labels to make it much easier to place the connections on one another.
+<img width="999" height="600" alt="image" src="https://github.com/user-attachments/assets/c8825722-14e8-45c0-b971-86c862aad910" />
+
+
 
